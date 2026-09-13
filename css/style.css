@@ -1,0 +1,749 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #151515;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.navbar {
+    background-color: #252525;
+    padding: 20px;
+    display: flex;
+    gap: 30px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: orange;
+}
+
+.hero h1 {
+    font-size: 64px;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1.1;
+    letter-spacing: 2px;
+    margin: 0 0 25px;
+    text-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+.hero {
+    text-align: center;
+    padding: 150px 20px;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+        url("../images/gym.png");
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 40px;
+}
+
+.join-button {
+    display: inline-block;
+    background-color: orange;
+    color: black;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.join-button:hover {
+    background-color: darkorange;
+}
+
+.features {
+    max-width: 900px;
+    margin: 0 auto 40px;
+    padding: 30px;
+    background-color: #252525;
+    border: 1px solid #444444;
+    border-radius: 12px;
+}
+
+.features h2 {
+    color: orange;
+    font-size: 28px;
+}
+
+.features p {
+    line-height: 1.6;
+}
+
+.features li {
+    margin-bottom: 12px;
+}
+
+footer {
+    background-color: #252525;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #444444;
+}
+
+.feature-image {
+    display: block;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid orange;
+    margin-bottom: 20px;
+}
+
+.about-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.about-section h1 {
+    color: orange;
+    font-size: 2.5rem;
+}
+
+.about-section p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.gym-image {
+    display: block;
+    width: 100%;
+    max-width: 900px;
+    height: 400px;
+    object-fit: cover;
+    margin: 30px auto 0;
+    border-radius: 12px;
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .hero {
+        padding: 80px 20px;
+    }
+
+    .features {
+        margin: 0 15px 30px;
+        padding: 20px;
+    }
+
+    .gym-image {
+        height: 250px;
+    }
+}
+
+.navbar a.active {
+    color: orange;
+    font-weight: bold;
+}
+
+.home-features {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    width: calc(100% - 40px);
+    max-width: 1150px;
+    margin: 0 auto 60px;
+    padding: 50px;
+    border-radius: 20px;
+    background-color: #252525;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.home-features .feature-image {
+    width: 260px;
+    height: 260px;
+    flex-shrink: 0;
+    margin: 0;
+}
+
+.features-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.features-text h2 {
+    margin: 0 0 22px;
+    font-size: 36px;
+}
+
+.features-text ul {
+    padding-left: 22px;
+    margin: 0;
+}
+
+.features-text li {
+    color: #dedede;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 18px;
+}
+
+.features-text li:last-child {
+    margin-bottom: 0;
+}
+
+.features-text li::marker {
+    color: orange;
+}
+
+.features-text strong {
+    color: white;
+}
+
+.site-footer {
+    padding: 45px 20px;
+    background-color: #1c1c1c;
+    border-top: 2px solid orange;
+    text-align: center;
+}
+
+.footer-brand {
+    margin: 0 0 18px;
+    color: orange;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.footer-brand span {
+    color: #f5f5f5;
+}
+
+.footer-authors {
+    margin: 0;
+    color: #bcbcbc;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.footer-authors strong {
+    color: #f5f5f5;
+    font-weight: 600;
+}
+
+.footer-divider {
+    color: orange;
+    margin: 0 10px;
+}
+
+@media (max-width: 800px) {
+    .home-features {
+        flex-direction: column;
+        gap: 30px;
+        padding: 30px 24px;
+    }
+
+    .home-features .feature-image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .features-text h2 {
+        font-size: 30px;
+    }
+
+    .features-text li {
+        font-size: 17px;
+    }
+
+    .footer-brand {
+        font-size: 22px;
+    }
+}
+
+.about-columns {
+    display: flex;
+    align-items: stretch;
+    gap: 25px;
+    max-width: 900px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+.about-columns>.features {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+    padding: 30px;
+    border-radius: 18px;
+}
+
+.about-columns h2 {
+    margin-top: 0;
+}
+
+.about-columns p,
+.about-columns li {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.about-columns ol {
+    padding-left: 22px;
+}
+
+.about-columns li::marker {
+    color: orange;
+    font-weight: bold;
+}
+
+@media (max-width: 800px) {
+    .about-columns {
+        flex-direction: column;
+    }
+}
+
+.about-section .about-intro {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #d6d6d6;
+    border-left: 3px solid orange;
+    padding-left: 22px;
+    margin: 25px 0 35px;
+}
+
+.about-intro strong {
+    display: block;
+    color: orange;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.hero h1 span {
+    display: block;
+    color: orange;
+    font-size: 0.65em;
+    letter-spacing: 8px;
+    margin-top: 15px;
+}
+
+.hero .hero-tagline {
+    font-size: 22px;
+    line-height: 1.6;
+    color: #dedede;
+    margin: 0 0 35px;
+}
+
+.hero-tagline strong {
+    color: white;
+}
+
+.hero .join-button {
+    padding: 17px 36px;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 10px;
+    box-shadow: 0 6px 22px rgba(255, 165, 0, 0.25);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.hero .join-button:hover {
+    transform: translateY(-3px);
+    background-color: #ffb52e;
+}
+
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero h1 span {
+        letter-spacing: 5px;
+    }
+
+    .hero .hero-tagline {
+        font-size: 18px;
+    }
+}
+
+#schedule {
+    max-width: 900px;
+    overflow-x: auto;
+}
+
+table.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.schedule-table th,
+.schedule-table td {
+    padding: 14px 16px;
+    text-align: left;
+}
+
+.schedule-table thead th {
+    background-color: #1c1c1c;
+    color: orange;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+    border-bottom: 2px solid orange;
+}
+
+.schedule-table tbody td {
+    color: #dedede;
+    border-bottom: 1px solid #3a3a3a;
+}
+
+.schedule-table tbody tr:hover td {
+    background-color: #2c2c2c;
+}
+
+.plans {
+    max-width: 1150px;
+    margin: 0 auto 20px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.plans h2 {
+    color: orange;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.plans-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 60px;
+}
+
+.plan-card {
+    flex: 1;
+    min-width: 240px;
+    max-width: 320px;
+    background-color: #252525;
+    border: 1px solid #444444;
+    border-radius: 16px;
+    padding: 32px 26px;
+    text-align: left;
+}
+
+.plan-card h3 {
+    color: orange;
+    font-size: 22px;
+    margin: 0 0 10px;
+}
+
+.plan-card .plan-price {
+    font-size: 30px;
+    font-weight: 800;
+    color: white;
+    margin: 0 0 20px;
+}
+
+.plan-card .plan-price span {
+    font-size: 14px;
+    font-weight: 400;
+    color: #bcbcbc;
+}
+
+.plan-card ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.plan-card ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid #3a3a3a;
+    color: #dedede;
+    font-size: 15px;
+}
+
+.plan-card ul li:last-child {
+    border-bottom: none;
+}
+
+@media (max-width: 800px) {
+    .plans-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .plan-card {
+        max-width: 400px;
+        width: 100%;
+    }
+}
+
+#contact-form {
+    max-width: 700px;
+}
+
+#contact-form form {
+    margin-top: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    color: #dedede;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    background-color: #1c1c1c;
+    border: 1px solid #444444;
+    border-radius: 8px;
+    padding: 12px 14px;
+    color: white;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: orange;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.radio-row {
+    display: flex;
+    gap: 25px;
+    color: #dedede;
+    font-size: 15px;
+}
+
+.radio-row label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 400;
+}
+
+button.join-button {
+    border: none;
+    cursor: pointer;
+    font: inherit;
+}
+
+.about-intro .text-accent {
+    color: #ffc04d;
+    font-weight: 600;
+}
+
+.plans-grid .plan-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #444444;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.plan-card ul {
+    flex: 1;
+}
+
+.plan-choice {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 25px;
+    padding: 15px;
+    border: 1px solid #666666;
+    border-radius: 10px;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.plan-choice input {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    accent-color: #151515;
+}
+
+.plan-choice:hover {
+    border-color: orange;
+    background-color: #333333;
+}
+
+.plan-card:has(input:checked) {
+    border-color: orange;
+    box-shadow: 0 8px 25px rgba(255, 165, 0, 0.15);
+}
+
+.plan-choice:has(input:checked) {
+    background-color: orange;
+    border-color: orange;
+    color: #151515;
+}
+
+.plan-choice:focus-within {
+    outline: 2px solid white;
+    outline-offset: 4px;
+}
+
+.training-time {
+    border: 0;
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+    min-width: 0;
+}
+
+.training-time legend {
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.goals-section {
+    width: calc(100% - 40px);
+    max-width: 860px;
+    margin: 0 auto 40px;
+    padding: 30px;
+}
+
+.goals-section h2 {
+    margin-top: 0;
+}
+
+.goals-section ol {
+    padding-left: 24px;
+    margin-bottom: 0;
+}
+
+.goals-section li {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.goals-section li::marker {
+    color: orange;
+    font-weight: bold;
+}
+
+.team-section {
+    max-width: 900px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+.team-section>h2 {
+    color: orange;
+    font-size: 36px;
+    text-align: center;
+    margin: 0 0 12px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.member-card {
+    background-color: #252525;
+    border: 1px solid #444444;
+    border-top: 3px solid orange;
+    border-radius: 18px;
+    padding: 30px;
+    text-align: center;
+}
+
+.member-photo {
+    width: 180px;
+    height: 180px;
+    max-width: 100%;
+    margin: 0 auto 25px;
+    border: 3px solid orange;
+    border-radius: 50%;
+}
+
+.member-card h3 {
+    color: white;
+    font-size: 26px;
+    margin: 0 0 10px;
+}
+
+.member-role {
+    color: orange;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    margin: 0 0 22px;
+}
+
+.member-bio {
+    color: #dedede;
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: left;
+}
+
+.member-details {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0 0;
+    text-align: left;
+}
+
+.member-details li {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 14px 0;
+    border-top: 1px solid #444444;
+    font-size: 16px;
+}
+
+.member-details strong {
+    color: #bcbcbc;
+}
+
+.member-details span {
+    color: orange;
+}
+
+@media (max-width: 700px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .member-card {
+        padding: 25px;
+    }
+
+    .team-section>h2 {
+        font-size: 30px;
+    }
+}

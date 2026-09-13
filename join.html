@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Created by: Sapan Miras -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Warriors Fitness | Join Us</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="training.html">Training</a>
+        <a class="active" href="join.html">Join Us</a>
+    </nav>
+
+    <main>
+        <section class="about-section">
+            <h1>Join Dragon Warriors</h1>
+
+            <p class="about-intro">
+                <strong>Your first step. Your next chapter.</strong>
+                Find your <span class="text-accent">membership plan</span>,
+                choose your preferred training time, and tell us about
+                <span class="text-accent">your fitness goals</span>
+                using the form below.
+            </p>
+
+            <img class="gym-image" src="images/reception.png" alt="A new member being welcomed at the gym reception">
+        </section>
+
+        <section class="plans">
+            <h2>Membership Plans</h2>
+
+            <div class="plans-grid">
+                <div class="plan-card">
+                    <h3>Basic</h3>
+                    <p class="plan-price">
+                        7,000 ₸<span>/month</span>
+                    </p>
+
+                    <ul>
+                        <li>Full gym floor access</li>
+                        <li>Locker room access</li>
+                        <li>Standard opening hours</li>
+                    </ul>
+
+                    <label class="plan-choice">
+                        <input type="radio" name="plan" value="basic" form="signup-form" required>
+                        Choose Basic
+                    </label>
+                </div>
+
+                <div class="plan-card">
+                    <h3>Premium</h3>
+                    <p class="plan-price">
+                        12,000 ₸<span>/month</span>
+                    </p>
+
+                    <ul>
+                        <li>Everything in Basic</li>
+                        <li>1 personal training session / month</li>
+                        <li>Group classes included</li>
+                    </ul>
+
+                    <label class="plan-choice">
+                        <input type="radio" name="plan" value="premium" form="signup-form" checked>
+                        Choose Premium
+                    </label>
+                </div>
+
+                <div class="plan-card">
+                    <h3>Elite</h3>
+                    <p class="plan-price">
+                        20,000 ₸<span>/month</span>
+                    </p>
+
+                    <ul>
+                        <li>Everything in Premium</li>
+                        <li>Weekly personal training</li>
+                        <li>Nutrition plan consultation</li>
+                    </ul>
+
+                    <label class="plan-choice">
+                        <input type="radio" name="plan" value="elite" form="signup-form">
+                        Choose Elite
+                    </label>
+                </div>
+            </div>
+        </section>
+
+        <section class="features" id="contact-form">
+            <h2>Sign Up / Contact Us</h2>
+
+            <form id="signup-form" action="#" method="post">
+                <div class="form-group">
+                    <label for="fullname">Full Name</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Your full name" autocomplete="name"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email"
+                        required>
+                </div>
+
+                <fieldset class="form-group training-time">
+                    <legend>Preferred Training Time</legend>
+
+                    <div class="radio-row">
+                        <label>
+                            <input type="radio" name="time" value="morning" checked>
+                            Morning
+                        </label>
+
+                        <label>
+                            <input type="radio" name="time" value="evening">
+                            Evening
+                        </label>
+                    </div>
+                </fieldset>
+
+                <div class="form-group">
+                    <label for="message">Your Goals / Message</label>
+                    <textarea id="message" name="message" rows="5"
+                        placeholder="Tell us about your fitness goals..."></textarea>
+                </div>
+
+                <button type="submit" class="join-button">
+                    Send Application &rarr;
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <p class="footer-brand">
+            Dragon Warriors <span>Fitness</span>
+        </p>
+
+        <p class="footer-authors">
+            Created by:
+            <strong>Mussa Madi</strong>
+            <span class="footer-divider">&amp;</span>
+            <strong>Sapan Miras</strong>
+        </p>
+    </footer>
+</body>
+
+</html>
