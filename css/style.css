@@ -9,10 +9,30 @@ body {
     margin: 0;
 }
 
-.navbar {
-    background-color: #252525;
-    padding: 20px;
+.site-header {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 30px;
+    background-color: #252525;
+}
+
+.logo {
+    color: orange;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logo span {
+    color: white;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 30px;
 }
 
@@ -81,14 +101,6 @@ body {
     margin-bottom: 12px;
 }
 
-footer {
-    background-color: #252525;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    border-top: 1px solid #444444;
-}
-
 .feature-image {
     display: block;
     width: 180px;
@@ -126,11 +138,6 @@ footer {
 }
 
 @media (max-width: 600px) {
-    .navbar {
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-
     .hero {
         padding: 80px 20px;
     }
@@ -263,48 +270,6 @@ footer {
 
     .footer-brand {
         font-size: 22px;
-    }
-}
-
-.about-columns {
-    display: flex;
-    align-items: stretch;
-    gap: 25px;
-    max-width: 900px;
-    margin: 0 auto 60px;
-    padding: 0 20px;
-}
-
-.about-columns>.features {
-    flex: 1;
-    min-width: 0;
-    margin: 0;
-    padding: 30px;
-    border-radius: 18px;
-}
-
-.about-columns h2 {
-    margin-top: 0;
-}
-
-.about-columns p,
-.about-columns li {
-    font-size: 18px;
-    line-height: 1.7;
-}
-
-.about-columns ol {
-    padding-left: 22px;
-}
-
-.about-columns li::marker {
-    color: orange;
-    font-weight: bold;
-}
-
-@media (max-width: 800px) {
-    .about-columns {
-        flex-direction: column;
     }
 }
 
@@ -463,6 +428,7 @@ table.schedule-table {
     list-style: none;
     margin: 0;
     padding: 0;
+    flex: 1;
 }
 
 .plan-card ul li {
@@ -561,12 +527,7 @@ button.join-button {
 .plans-grid .plan-card {
     display: flex;
     flex-direction: column;
-    border: 1px solid #444444;
-    transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-.plan-card ul {
-    flex: 1;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
 }
 
 .plan-choice {
@@ -656,7 +617,7 @@ button.join-button {
     padding: 0 20px;
 }
 
-.team-section>h2 {
+.team-section > h2 {
     color: orange;
     font-size: 36px;
     text-align: center;
@@ -743,7 +704,270 @@ button.join-button {
         padding: 25px;
     }
 
-    .team-section>h2 {
+    .team-section > h2 {
         font-size: 30px;
     }
+}
+
+@media (max-width: 700px) {
+    .site-header {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .navbar {
+        justify-content: center;
+        gap: 15px;
+    }
+}
+
+.programs {
+    max-width: 1150px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+.programs h2 {
+    color: orange;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.card-row {
+    display: flex;
+    align-items: stretch;
+    gap: 25px;
+}
+
+.program-card {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #252525;
+    border: 1px solid #444444;
+    border-radius: 12px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.program-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.program-card h3 {
+    color: orange;
+    margin: 20px 0 10px;
+}
+
+.program-card p {
+    color: #dedede;
+    line-height: 1.6;
+    margin: 0 0 20px;
+}
+
+.program-card .join-button {
+    margin-top: auto;
+    text-align: center;
+}
+
+.program-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 800px) {
+    .card-row {
+        flex-direction: column;
+    }
+}
+
+.page-layout {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header header"
+        "sidebar main"
+        "footer footer";
+    min-height: 100vh;
+}
+
+.page-layout > .site-header {
+    grid-area: header;
+}
+
+.page-layout > .sidebar {
+    grid-area: sidebar;
+}
+
+.page-layout > main {
+    grid-area: main;
+    min-width: 0;
+}
+
+.page-layout > .site-footer {
+    grid-area: footer;
+}
+
+.sidebar {
+    padding: 30px 20px;
+    background-color: #1c1c1c;
+    border-right: 1px solid #444444;
+}
+
+.sidebar h2 {
+    color: orange;
+    font-size: 24px;
+    margin-top: 0;
+}
+
+.sidebar h3 {
+    color: orange;
+    margin-top: 35px;
+}
+
+.sidebar p {
+    color: #dedede;
+    line-height: 1.6;
+}
+
+.sidebar-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar-links a {
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    background-color: #252525;
+    border-radius: 6px;
+}
+
+.sidebar-links a:hover {
+    color: orange;
+    background-color: #333333;
+}
+
+@media (max-width: 800px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "main"
+            "footer";
+    }
+
+    .sidebar {
+        border-right: none;
+        border-bottom: 1px solid #444444;
+    }
+}
+
+.gallery-section {
+    max-width: 1150px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+.gallery-section h2 {
+    color: orange;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: 230px;
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.gallery-item figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-item:hover figcaption {
+    opacity: 1;
+}
+
+@media (max-width: 800px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 500px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (hover: none) {
+    .gallery-item figcaption {
+        opacity: 1;
+    }
+}
+
+.plan-card:hover {
+    transform: translateY(-5px);
+    border-color: orange;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+#trainer-bio .program-card img {
+    object-position: top center;
+}
+
+.training-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 500px) {
+    .training-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+#nutrition-tips {
+    width: calc(100% - 40px);
+    max-width: 1110px;
+    margin: 0 auto 40px;
 }

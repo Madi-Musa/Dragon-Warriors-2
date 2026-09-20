@@ -9,13 +9,35 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
-    <nav class="navbar">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a class="active" href="training.html">Training</a>
-        <a href="join.html">Join Us</a>
-    </nav>
+<body class="page-layout">
+    <header class="site-header">
+        <a class="logo" href="index.html">
+            Dragon Warriors <span>Fitness</span>
+        </a>
+
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a class="active" href="training.html">Training</a>
+            <a href="join.html">Join Us</a>
+        </nav>
+    </header>
+
+    <aside class="sidebar">
+        <h2>Training Guide</h2>
+
+        <nav class="sidebar-links">
+            <a href="#program-cards">Programs</a>
+            <a href="#nutrition-tips">Nutrition Tips</a>
+            <a href="#schedule">Weekly Schedule</a>
+            <a href="#trainer-bio">Our Trainers</a>
+            <a href="#training-gallery">Gallery</a>
+            <a href="join.html">Join Our Club</a>
+        </nav>
+
+        <h3>Start Your Journey</h3>
+        <p>Choose a program that matches your goals and experience.</p>
+    </aside>
 
     <main>
         <section class="about-section">
@@ -31,39 +53,52 @@
             <img class="gym-image" src="images/training.png" alt="An athlete exercising on a cable row machine">
         </section>
 
-        <div class="about-columns">
-            <section class="features">
-                <h2>Training Plans</h2>
-                <ol>
-                    <li>
-                        <strong>Beginner</strong> — full-body basics, light
-                        weights, and a strong focus on correct form
-                        (3 days a week).
-                    </li>
-                    <li>
-                        <strong>Intermediate</strong> — split routines,
-                        progressive overload, and added cardio work
-                        (4 days a week).
-                    </li>
-                    <li>
-                        <strong>Advanced</strong> — high-intensity strength
-                        and conditioning cycles for experienced athletes
-                        (5–6 days a week).
-                    </li>
-                </ol>
-            </section>
+        <section class="programs" id="program-cards">
+            <h2>Choose Your Program</h2>
 
-            <section class="features">
-                <h2>Nutrition Tips</h2>
-                <ul>
-                    <li>Eat enough protein every day to support muscle recovery.</li>
-                    <li>Drink water before, during, and after every session.</li>
-                    <li>Prioritize whole foods over processed snacks.</li>
-                    <li>Don't skip meals on training days — fuel the work.</li>
-                    <li>Get 7–9 hours of sleep for real recovery and growth.</li>
-                </ul>
-            </section>
-        </div>
+            <div class="card-row">
+                <article class="program-card">
+                    <img src="images/beginner.png" alt="Beginner training">
+                    <h3>Beginner</h3>
+                    <p>
+                        Full-body basics three days a week. Light weights,
+                        simple movements, and a strong focus on correct form.
+                    </p>
+                    <a class="join-button" href="join.html">Join This Program</a>
+                </article>
+
+                <article class="program-card">
+                    <img src="images/intermediate.png" alt="Intermediate training">
+                    <h3>Intermediate</h3>
+                    <p>
+                        Split routines four days a week with progressive
+                        overload and extra cardio work for conditioning.
+                    </p>
+                    <a class="join-button" href="join.html">Join This Program</a>
+                </article>
+
+                <article class="program-card">
+                    <img src="images/advanced.png" alt="Advanced training">
+                    <h3>Advanced</h3>
+                    <p>
+                        High-intensity strength and conditioning cycles,
+                        five to six days a week for experienced athletes.
+                    </p>
+                    <a class="join-button" href="join.html">Join This Program</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="features" id="nutrition-tips">
+            <h2>Nutrition Tips</h2>
+            <ul>
+                <li>Eat enough protein every day to support muscle recovery.</li>
+                <li>Drink water before, during, and after every session.</li>
+                <li>Prioritize whole foods over processed snacks.</li>
+                <li>Don't skip meals on training days — fuel the work.</li>
+                <li>Get 7–9 hours of sleep for real recovery and growth.</li>
+            </ul>
+        </section>
 
         <section class="features" id="schedule">
             <h2>Sample Weekly Schedule</h2>
@@ -123,27 +158,60 @@
             </table>
         </section>
 
-        <section class="features" id="trainer-bio">
-            <h2>Meet Your Trainer</h2>
-            <p>
-                Sapan Miras is a fitness trainer at Dragon Warriors Fitness.
-                Learn more about him on our About Us page.
-            </p>
-            <a class="join-button" href="about.html#miras">
-                About Miras &rarr;
-            </a>
+        <section class="programs" id="trainer-bio">
+            <h2>Meet Your Trainers</h2>
+
+            <div class="card-row">
+                <article class="program-card">
+                    <img src="images/miras.png" alt="Sapan Miras">
+                    <h3>Sapan Miras</h3>
+                    <p>
+                        Fitness trainer at Dragon Warriors Fitness with two
+                        years of experience in strength and conditioning.
+                    </p>
+                    <a class="join-button" href="about.html#miras">
+                        About Miras &rarr;
+                    </a>
+                </article>
+
+                <article class="program-card" id="member-intro">
+                    <img src="images/madi.png" alt="Mussa Madi">
+                    <h3>Mussa Madi</h3>
+                    <p>
+                        Fitness trainer at Dragon Warriors Fitness with one
+                        year of experience helping beginners start training.
+                    </p>
+                    <a class="join-button" href="about.html#madi">
+                        About Madi &rarr;
+                    </a>
+                </article>
+            </div>
         </section>
 
-        <section class="features" id="member-intro">
-            <h2>Meet Your Trainer</h2>
-            <p>
-                Mussa Madi is a fitness trainer at Dragon Warriors Fitness
-                with one year of experience. Learn more about him
-                on our About Us page.
-            </p>
-            <a class="join-button" href="about.html#madi">
-                About Madi &rarr;
-            </a>
+        <section class="gallery-section" id="training-gallery">
+            <h2>Training Gallery</h2>
+
+            <div class="gallery-grid training-gallery">
+                <figure class="gallery-item">
+                    <img src="images/training-daily.png" alt="Treadmill workout">
+                    <figcaption>Daily Training</figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <img src="images/training-strength.png" alt="Dumbbell shoulder press">
+                    <figcaption>Build Your Strength</figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <img src="images/training-coaching.png" alt="Discussing a training plan">
+                    <figcaption>Personal Coaching</figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <img src="images/training-together.png" alt="Group warmup">
+                    <figcaption>Train Together</figcaption>
+                </figure>
+            </div>
         </section>
 
     </main>

@@ -9,13 +9,35 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
-    <nav class="navbar">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="training.html">Training</a>
-        <a class="active" href="join.html">Join Us</a>
-    </nav>
+<body class="page-layout">
+    <header class="site-header">
+        <a class="logo" href="index.html">
+            Dragon Warriors <span>Fitness</span>
+        </a>
+
+        <nav class="navbar">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="training.html">Training</a>
+            <a class="active" href="join.html">Join Us</a>
+        </nav>
+    </header>
+    <aside class="sidebar">
+        <h2>Membership Guide</h2>
+
+        <nav class="sidebar-links">
+            <a href="#why-join">Why Join Us</a>
+            <a href="#plans-section">Membership Plans</a>
+            <a href="#contact-form">Sign Up Form</a>
+            <a href="training.html">Training Programs</a>
+        </nav>
+
+        <h3>Not Sure Yet?</h3>
+        <p>
+            Start with Basic and upgrade at any time. Every plan includes
+            a free introduction session with one of our trainers.
+        </p>
+    </aside>
 
     <main>
         <section class="about-section">
@@ -32,7 +54,43 @@
             <img class="gym-image" src="images/reception.png" alt="A new member being welcomed at the gym reception">
         </section>
 
-        <section class="plans">
+        <section class="programs" id="why-join">
+            <h2>Why Join Dragon Warriors</h2>
+
+            <div class="card-row">
+                <article class="program-card">
+                    <img src="images/join-equipment.png" alt="Modern gym equipment">
+                    <h3>Modern Equipment</h3>
+                    <p>
+                        Machines and free weights for every level, kept in
+                        good condition and always ready to use.
+                    </p>
+                    <a class="join-button" href="#plans-section">See Plans</a>
+                </article>
+
+                <article class="program-card">
+                    <img src="images/join-coaching.png" alt="A trainer helping a gym member">
+                    <h3>Expert Coaching</h3>
+                    <p>
+                        Our trainers help you learn the movements, fix your
+                        form, and build a plan that matches your goals.
+                    </p>
+                    <a class="join-button" href="training.html">Our Programs</a>
+                </article>
+
+                <article class="program-card">
+                    <img src="images/join-community.png" alt="Gym members relaxing together">
+                    <h3>Strong Community</h3>
+                    <p>
+                        Train next to people who share your interest in an
+                        active lifestyle and keep each other motivated.
+                    </p>
+                    <a class="join-button" href="#contact-form">Sign Up</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="plans" id="plans-section">
             <h2>Membership Plans</h2>
 
             <div class="plans-grid">
