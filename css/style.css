@@ -3,10 +3,10 @@
 }
 
 body {
-    background-color: #151515;
-    color: white;
-    font-family: Arial, sans-serif;
     margin: 0;
+    background-color: #151515;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
 }
 
 .site-header {
@@ -29,20 +29,52 @@ body {
     color: white;
 }
 
-.navbar {
+body:not(.bootstrap-page) .navbar {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     gap: 30px;
 }
 
-.navbar a {
+body:not(.bootstrap-page) .navbar a {
     color: white;
     text-decoration: none;
 }
 
-.navbar a:hover {
+body:not(.bootstrap-page) .navbar a:hover,
+body:not(.bootstrap-page) .navbar a.active {
     color: orange;
+}
+
+body:not(.bootstrap-page) .navbar a.active {
+    font-weight: bold;
+}
+
+.bootstrap-page .navbar-brand {
+    max-width: calc(100% - 75px);
+}
+
+.bootstrap-page .nav-link {
+    color: #e0e0e0;
+}
+
+.bootstrap-page .nav-link:hover {
+    color: orange;
+}
+
+.bootstrap-page a:focus-visible,
+.bootstrap-page button:focus-visible {
+    outline: 3px solid white;
+    outline-offset: 4px;
+}
+
+.hero {
+    text-align: center;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+        url("../images/gym.png");
+    background-size: cover;
+    background-position: center;
 }
 
 .hero h1 {
@@ -51,32 +83,313 @@ body {
     text-transform: uppercase;
     line-height: 1.1;
     letter-spacing: 2px;
-    margin: 0 0 25px;
     text-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
 }
 
-.hero {
-    text-align: center;
-    padding: 150px 20px;
-    background-image:
-        linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
-        url("../images/gym.png");
-    background-size: cover;
-    background-position: center;
-    margin-bottom: 40px;
+.hero h1 span {
+    display: block;
+    color: orange;
+    font-size: 0.65em;
+    letter-spacing: 5px;
+}
+
+.hero .hero-tagline {
+    font-size: 22px;
+    line-height: 1.6;
+    color: #dedede;
+}
+
+.hero-tagline strong {
+    color: white;
 }
 
 .join-button {
     display: inline-block;
+    padding: 15px 30px;
+    border-radius: 8px;
     background-color: orange;
     color: black;
-    padding: 15px 30px;
     text-decoration: none;
-    border-radius: 8px;
 }
 
 .join-button:hover {
     background-color: darkorange;
+    color: black;
+}
+
+button.join-button {
+    border: none;
+    cursor: pointer;
+    font: inherit;
+}
+
+.programs {
+    max-width: 1150px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+.programs h2 {
+    margin-bottom: 30px;
+    color: orange;
+    text-align: center;
+    font-size: 32px;
+}
+
+.card-row {
+    display: flex;
+    align-items: stretch;
+    gap: 25px;
+}
+
+.programs .card-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.program-card {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #252525;
+    border: 1px solid #444444;
+    border-radius: 12px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.program-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.program-card h3 {
+    margin: 20px 0 10px;
+    color: orange;
+}
+
+.program-card p {
+    margin: 0 0 20px;
+    color: #dedede;
+    line-height: 1.6;
+}
+
+.program-card .join-button {
+    margin-top: auto;
+    text-align: center;
+}
+
+.program-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+body:not(.bootstrap-page) .about-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.about-section h1 {
+    color: orange;
+    font-size: 40px;
+}
+
+.about-section p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.about-section .about-intro {
+    font-size: 20px;
+    line-height: 1.8;
+    color: #d6d6d6;
+    border-left: 3px solid orange;
+}
+
+body:not(.bootstrap-page) .about-intro {
+    padding-left: 22px;
+    margin: 25px 0 35px;
+}
+
+.about-intro strong {
+    display: block;
+    color: orange;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+body:not(.bootstrap-page) .about-intro strong {
+    margin-bottom: 10px;
+}
+
+.about-intro .text-accent {
+    color: #ffc04d;
+    font-weight: 600;
+}
+
+.gym-image {
+    display: block;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.member-card {
+    background-color: #252525;
+    border: 1px solid #444444;
+    border-top: 3px solid orange;
+    border-radius: 18px;
+    text-align: center;
+}
+
+.member-photo {
+    width: 180px;
+    height: 180px;
+    max-width: 100%;
+    object-fit: cover;
+    border: 3px solid orange;
+    border-radius: 50%;
+}
+
+.member-card h3 {
+    color: white;
+    font-size: 26px;
+}
+
+.member-role {
+    color: orange;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+.member-bio {
+    color: #dedede;
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: left;
+}
+
+.member-details {
+    text-align: left;
+}
+
+.member-details li {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-top: 1px solid #444444;
+    font-size: 16px;
+}
+
+.member-details strong {
+    color: #bcbcbc;
+}
+
+.member-details span {
+    color: orange;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.gallery-item figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.bootstrap-page .gallery-photo {
+    height: 230px;
+}
+
+body:not(.bootstrap-page) .gallery-item {
+    margin: 0;
+}
+
+body:not(.bootstrap-page) .gallery-item figcaption {
+    padding: 15px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+body:not(.bootstrap-page) .gallery-item:hover figcaption {
+    opacity: 1;
+}
+
+.site-footer {
+    background-color: #1c1c1c;
+    border-top: 2px solid orange;
+    text-align: center;
+}
+
+.footer-brand {
+    color: orange;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.footer-brand span {
+    color: #f5f5f5;
+}
+
+.footer-authors {
+    color: #bcbcbc;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.footer-authors strong {
+    color: #f5f5f5;
+    font-weight: 600;
+}
+
+.footer-divider {
+    color: orange;
+}
+
+body:not(.bootstrap-page) .site-footer {
+    padding: 45px 20px;
+}
+
+body:not(.bootstrap-page) .footer-brand {
+    margin: 0 0 18px;
+}
+
+body:not(.bootstrap-page) .footer-authors {
+    margin: 0;
+}
+
+body:not(.bootstrap-page) .footer-divider {
+    margin: 0 10px;
 }
 
 .features {
@@ -111,239 +424,12 @@ body {
     margin-bottom: 20px;
 }
 
-.about-section {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 60px 20px;
-}
-
-.about-section h1 {
-    color: orange;
-    font-size: 2.5rem;
-}
-
-.about-section p {
-    font-size: 18px;
-    line-height: 1.6;
-}
-
-.gym-image {
-    display: block;
-    width: 100%;
-    max-width: 900px;
-    height: 400px;
-    object-fit: cover;
-    margin: 30px auto 0;
-    border-radius: 12px;
-}
-
-@media (max-width: 600px) {
-    .hero {
-        padding: 80px 20px;
-    }
-
-    .features {
-        margin: 0 15px 30px;
-        padding: 20px;
-    }
-
-    .gym-image {
-        height: 250px;
-    }
-}
-
-.navbar a.active {
-    color: orange;
-    font-weight: bold;
-}
-
-.home-features {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    width: calc(100% - 40px);
-    max-width: 1150px;
-    margin: 0 auto 60px;
-    padding: 50px;
-    border-radius: 20px;
-    background-color: #252525;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-}
-
-.home-features .feature-image {
-    width: 260px;
-    height: 260px;
-    flex-shrink: 0;
-    margin: 0;
-}
-
-.features-text {
-    flex: 1;
-    min-width: 0;
-}
-
-.features-text h2 {
-    margin: 0 0 22px;
-    font-size: 36px;
-}
-
-.features-text ul {
-    padding-left: 22px;
-    margin: 0;
-}
-
-.features-text li {
-    color: #dedede;
-    font-size: 18px;
-    line-height: 1.7;
-    margin-bottom: 18px;
-}
-
-.features-text li:last-child {
-    margin-bottom: 0;
-}
-
-.features-text li::marker {
-    color: orange;
-}
-
-.features-text strong {
-    color: white;
-}
-
-.site-footer {
-    padding: 45px 20px;
-    background-color: #1c1c1c;
-    border-top: 2px solid orange;
-    text-align: center;
-}
-
-.footer-brand {
-    margin: 0 0 18px;
-    color: orange;
-    font-size: 28px;
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.footer-brand span {
-    color: #f5f5f5;
-}
-
-.footer-authors {
-    margin: 0;
-    color: #bcbcbc;
-    font-size: 16px;
-    line-height: 1.8;
-}
-
-.footer-authors strong {
-    color: #f5f5f5;
-    font-weight: 600;
-}
-
-.footer-divider {
-    color: orange;
-    margin: 0 10px;
-}
-
-@media (max-width: 800px) {
-    .home-features {
-        flex-direction: column;
-        gap: 30px;
-        padding: 30px 24px;
-    }
-
-    .home-features .feature-image {
-        width: 200px;
-        height: 200px;
-    }
-
-    .features-text h2 {
-        font-size: 30px;
-    }
-
-    .features-text li {
-        font-size: 17px;
-    }
-
-    .footer-brand {
-        font-size: 22px;
-    }
-}
-
-.about-section .about-intro {
-    font-size: 20px;
-    line-height: 1.8;
-    color: #d6d6d6;
-    border-left: 3px solid orange;
-    padding-left: 22px;
-    margin: 25px 0 35px;
-}
-
-.about-intro strong {
-    display: block;
-    color: orange;
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.hero h1 span {
-    display: block;
-    color: orange;
-    font-size: 0.65em;
-    letter-spacing: 8px;
-    margin-top: 15px;
-}
-
-.hero .hero-tagline {
-    font-size: 22px;
-    line-height: 1.6;
-    color: #dedede;
-    margin: 0 0 35px;
-}
-
-.hero-tagline strong {
-    color: white;
-}
-
-.hero .join-button {
-    padding: 17px 36px;
-    font-size: 17px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    border-radius: 10px;
-    box-shadow: 0 6px 22px rgba(255, 165, 0, 0.25);
-    transition: transform 0.2s, background-color 0.2s;
-}
-
-.hero .join-button:hover {
-    transform: translateY(-3px);
-    background-color: #ffb52e;
-}
-
-@media (max-width: 600px) {
-    .hero h1 {
-        font-size: 36px;
-    }
-
-    .hero h1 span {
-        letter-spacing: 5px;
-    }
-
-    .hero .hero-tagline {
-        font-size: 18px;
-    }
-}
-
 #schedule {
     max-width: 900px;
     overflow-x: auto;
 }
 
-table.schedule-table {
+.schedule-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 15px;
@@ -396,13 +482,16 @@ table.schedule-table {
 
 .plan-card {
     flex: 1;
+    display: flex;
+    flex-direction: column;
     min-width: 240px;
     max-width: 320px;
+    padding: 32px 26px;
     background-color: #252525;
     border: 1px solid #444444;
     border-radius: 16px;
-    padding: 32px 26px;
     text-align: left;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
 }
 
 .plan-card h3 {
@@ -442,92 +531,10 @@ table.schedule-table {
     border-bottom: none;
 }
 
-@media (max-width: 800px) {
-    .plans-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .plan-card {
-        max-width: 400px;
-        width: 100%;
-    }
-}
-
-#contact-form {
-    max-width: 700px;
-}
-
-#contact-form form {
-    margin-top: 15px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 22px;
-}
-
-.form-group label {
-    color: #dedede;
-    font-weight: 600;
-    font-size: 15px;
-}
-
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group textarea {
-    background-color: #1c1c1c;
-    border: 1px solid #444444;
-    border-radius: 8px;
-    padding: 12px 14px;
-    color: white;
-    font-family: inherit;
-    font-size: 15px;
-}
-
-.form-group input[type="text"]:focus,
-.form-group input[type="email"]:focus,
-.form-group textarea:focus {
-    outline: none;
+.plan-card:hover {
+    transform: translateY(-5px);
     border-color: orange;
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-.radio-row {
-    display: flex;
-    gap: 25px;
-    color: #dedede;
-    font-size: 15px;
-}
-
-.radio-row label {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: 400;
-}
-
-button.join-button {
-    border: none;
-    cursor: pointer;
-    font: inherit;
-}
-
-.about-intro .text-accent {
-    color: #ffc04d;
-    font-weight: 600;
-}
-
-.plans-grid .plan-card {
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
 .plan-choice {
@@ -572,6 +579,67 @@ button.join-button {
     outline-offset: 4px;
 }
 
+#contact-form {
+    max-width: 700px;
+}
+
+#contact-form form {
+    margin-top: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    color: #dedede;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    background-color: #1c1c1c;
+    border: 1px solid #444444;
+    border-radius: 8px;
+    padding: 12px 14px;
+    color: white;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    outline: 2px solid orange;
+    outline-offset: 2px;
+    border-color: orange;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.radio-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    color: #dedede;
+    font-size: 15px;
+}
+
+.radio-row label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 400;
+}
+
 .training-time {
     border: 0;
     padding: 0;
@@ -583,207 +651,6 @@ button.join-button {
 .training-time legend {
     font-weight: 600;
     margin-bottom: 12px;
-}
-
-.goals-section {
-    width: calc(100% - 40px);
-    max-width: 860px;
-    margin: 0 auto 40px;
-    padding: 30px;
-}
-
-.goals-section h2 {
-    margin-top: 0;
-}
-
-.goals-section ol {
-    padding-left: 24px;
-    margin-bottom: 0;
-}
-
-.goals-section li {
-    font-size: 18px;
-    line-height: 1.7;
-}
-
-.goals-section li::marker {
-    color: orange;
-    font-weight: bold;
-}
-
-.team-section {
-    max-width: 900px;
-    margin: 0 auto 60px;
-    padding: 0 20px;
-}
-
-.team-section > h2 {
-    color: orange;
-    font-size: 36px;
-    text-align: center;
-    margin: 0 0 12px;
-}
-
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 25px;
-}
-
-.member-card {
-    background-color: #252525;
-    border: 1px solid #444444;
-    border-top: 3px solid orange;
-    border-radius: 18px;
-    padding: 30px;
-    text-align: center;
-}
-
-.member-photo {
-    width: 180px;
-    height: 180px;
-    max-width: 100%;
-    margin: 0 auto 25px;
-    border: 3px solid orange;
-    border-radius: 50%;
-}
-
-.member-card h3 {
-    color: white;
-    font-size: 26px;
-    margin: 0 0 10px;
-}
-
-.member-role {
-    color: orange;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    line-height: 1.5;
-    margin: 0 0 22px;
-}
-
-.member-bio {
-    color: #dedede;
-    font-size: 18px;
-    line-height: 1.8;
-    text-align: left;
-}
-
-.member-details {
-    list-style: none;
-    padding: 0;
-    margin: 25px 0 0;
-    text-align: left;
-}
-
-.member-details li {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 14px 0;
-    border-top: 1px solid #444444;
-    font-size: 16px;
-}
-
-.member-details strong {
-    color: #bcbcbc;
-}
-
-.member-details span {
-    color: orange;
-}
-
-@media (max-width: 700px) {
-    .team-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .member-card {
-        padding: 25px;
-    }
-
-    .team-section > h2 {
-        font-size: 30px;
-    }
-}
-
-@media (max-width: 700px) {
-    .site-header {
-        flex-direction: column;
-        padding: 20px;
-    }
-
-    .navbar {
-        justify-content: center;
-        gap: 15px;
-    }
-}
-
-.programs {
-    max-width: 1150px;
-    margin: 0 auto 60px;
-    padding: 0 20px;
-}
-
-.programs h2 {
-    color: orange;
-    text-align: center;
-    font-size: 32px;
-    margin-bottom: 30px;
-}
-
-.card-row {
-    display: flex;
-    align-items: stretch;
-    gap: 25px;
-}
-
-.program-card {
-    flex: 1;
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    background-color: #252525;
-    border: 1px solid #444444;
-    border-radius: 12px;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.program-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-.program-card h3 {
-    color: orange;
-    margin: 20px 0 10px;
-}
-
-.program-card p {
-    color: #dedede;
-    line-height: 1.6;
-    margin: 0 0 20px;
-}
-
-.program-card .join-button {
-    margin-top: auto;
-    text-align: center;
-}
-
-.program-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-}
-
-@media (max-width: 800px) {
-    .card-row {
-        flex-direction: column;
-    }
 }
 
 .page-layout {
@@ -855,23 +722,6 @@ button.join-button {
     background-color: #333333;
 }
 
-@media (max-width: 800px) {
-    .page-layout {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto 1fr auto;
-        grid-template-areas:
-            "header"
-            "sidebar"
-            "main"
-            "footer";
-    }
-
-    .sidebar {
-        border-right: none;
-        border-bottom: 1px solid #444444;
-    }
-}
-
 .gallery-section {
     max-width: 1150px;
     margin: 0 auto 60px;
@@ -892,82 +742,371 @@ button.join-button {
     gap: 20px;
 }
 
-.gallery-item {
-    position: relative;
-    margin: 0;
-    overflow: hidden;
-    border-radius: 12px;
-}
-
-.gallery-item img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s;
-}
-
-.gallery-item figcaption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 15px;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: white;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.gallery-item:hover img {
-    transform: scale(1.05);
-}
-
-.gallery-item:hover figcaption {
-    opacity: 1;
-}
-
-@media (max-width: 800px) {
-    .gallery-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 500px) {
-    .gallery-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (hover: none) {
-    .gallery-item figcaption {
-        opacity: 1;
-    }
-}
-
-.plan-card:hover {
-    transform: translateY(-5px);
-    border-color: orange;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+.training-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 #trainer-bio .program-card img {
     object-position: top center;
 }
 
-.training-gallery {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+#nutrition-tips {
+    width: calc(100% - 40px);
+    max-width: 1110px;
+    margin: 0 auto 40px;
+}
+
+@media (max-width: 991px) {
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero .hero-tagline {
+        font-size: 20px;
+    }
+
+    .about-section h1 {
+        font-size: 32px;
+    }
+
+    .about-section .about-intro {
+        font-size: 18px;
+    }
+
+    .programs .card-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 800px) {
+    .plans-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .plan-card {
+        max-width: 400px;
+        width: 100%;
+    }
+
+    .card-row {
+        flex-direction: column;
+    }
+
+    .page-layout {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-areas:
+            "header"
+            "sidebar"
+            "main"
+            "footer";
+    }
+
+    .sidebar {
+        border-right: none;
+        border-bottom: 1px solid #444444;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .footer-brand {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero .hero-tagline {
+        font-size: 16px;
+    }
+
+    .about-section h1 {
+        font-size: 26px;
+    }
+
+    .about-section .about-intro {
+        font-size: 16px;
+    }
+
+    .programs .card-row {
+        grid-template-columns: 1fr;
+    }
+
+    .gym-image {
+        height: 250px;
+    }
+
+    .member-bio {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 700px) {
+    .site-header {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    body:not(.bootstrap-page) .navbar {
+        justify-content: center;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .features {
+        margin: 0 15px 30px;
+        padding: 20px;
+    }
 }
 
 @media (max-width: 500px) {
+    .gallery-grid,
     .training-gallery {
         grid-template-columns: 1fr;
     }
 }
 
-#nutrition-tips {
-    width: calc(100% - 40px);
-    max-width: 1110px;
-    margin: 0 auto 40px;
+@media (hover: none) {
+    body:not(.bootstrap-page) .gallery-item figcaption {
+        opacity: 1;
+    }
+}
+.why-image {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid orange;
+}
+
+@media (max-width: 767px) {
+    .why-image {
+        width: 220px;
+        height: 220px;
+    }
+}
+
+/* =========================================================
+   Training & Join Us pages (Bootstrap) - Sapan Miras
+   Spacing on these pages comes only from Bootstrap
+   utilities (m-*, p-*), so no margin/padding is set here.
+   ========================================================= */
+
+.text-soft {
+    color: #d6d6d6;
+}
+
+/* Responsive typography: desktop -> tablet -> mobile */
+.page-title {
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+.section-title {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+@media (max-width: 991px) {
+    .page-title {
+        font-size: 36px;
+    }
+
+    .section-title {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 767px) {
+    .page-title {
+        font-size: 28px;
+    }
+
+    .section-title {
+        font-size: 22px;
+    }
+}
+
+.intro-image {
+    width: 100%;
+    max-height: 380px;
+    object-fit: cover;
+}
+
+/* Sidebar */
+.dw-sidebar {
+    background-color: #1c1c1c;
+    border-bottom: 1px solid #444444;
+}
+
+@media (min-width: 992px) {
+    .dw-sidebar {
+        border-bottom: none;
+        border-right: 1px solid #444444;
+    }
+}
+
+.dw-sidebar .list-group-item {
+    background-color: #252525;
+    border-color: #3a3a3a;
+    color: #f5f5f5;
+}
+
+.dw-sidebar .list-group-item:hover,
+.dw-sidebar .list-group-item:focus {
+    background-color: #333333;
+    color: orange;
+}
+
+/* Bootstrap card theme */
+.dw-card {
+    --bs-card-bg: #252525;
+    --bs-card-border-color: #444444;
+    --bs-card-border-radius: 12px;
+    overflow: hidden;
+    border-top: 3px solid orange;
+}
+
+.dw-card-img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.dw-trainer-img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 220px;
+    object-fit: cover;
+    object-position: top center;
+}
+
+@media (max-width: 575px) {
+    .dw-trainer-img {
+        height: 280px;
+    }
+}
+
+/* Panels and lists */
+.dw-panel {
+    background-color: #252525;
+    border: 1px solid #444444;
+}
+
+.dw-panel .list-group-item,
+.dw-plan .list-group-item {
+    color: #dedede;
+    border-color: #3a3a3a;
+}
+
+/* Schedule table */
+.dw-table {
+    --bs-table-bg: #252525;
+    --bs-table-striped-bg: #2c2c2c;
+    --bs-table-hover-bg: #333333;
+    --bs-table-border-color: #3a3a3a;
+    white-space: nowrap;
+}
+
+.dw-table thead th {
+    color: orange;
+    border-bottom: 2px solid orange;
+}
+
+/* Plans */
+.dw-plan .plan-price {
+    font-size: 30px;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.dw-plan .plan-price span {
+    font-size: 14px;
+    font-weight: 400;
+    color: #bcbcbc;
+}
+
+.dw-plan-featured {
+    border-color: orange;
+}
+
+.dw-plan:has(.btn-check:checked) {
+    border-color: orange;
+    box-shadow: 0 8px 25px rgba(255, 165, 0, 0.15);
+}
+
+/* Carousel */
+.dw-carousel-img {
+    height: 460px;
+    object-fit: cover;
+}
+
+.dw-caption {
+    background-color: rgba(0, 0, 0, 0.75);
+    left: 10%;
+    right: 10%;
+    bottom: 2.5rem;
+}
+
+/* Keep captions and controls white on the dark theme */
+.dw-carousel.carousel .carousel-caption {
+    color: #ffffff;
+}
+
+.dw-carousel.carousel .carousel-control-prev-icon,
+.dw-carousel.carousel .carousel-control-next-icon {
+    filter: none;
+}
+
+.dw-carousel.carousel .carousel-indicators [data-bs-target] {
+    background-color: #ffffff;
+}
+
+.dw-carousel.carousel .carousel-indicators .active {
+    background-color: orange;
+}
+
+@media (max-width: 991px) {
+    .dw-carousel-img {
+        height: 360px;
+    }
+}
+
+@media (max-width: 575px) {
+    .dw-carousel-img {
+        height: 240px;
+    }
+}
+
+/* Form on dark background */
+.bootstrap-page .form-control,
+.bootstrap-page .form-select,
+.bootstrap-page .input-group-text {
+    background-color: #1c1c1c;
+    border-color: #555555;
+}
+
+.bootstrap-page .form-control:focus,
+.bootstrap-page .form-select:focus {
+    border-color: orange;
+    box-shadow: 0 0 0 0.25rem rgba(255, 165, 0, 0.25);
+}
+
+.bootstrap-page .form-check-input:checked {
+    background-color: orange;
+    border-color: orange;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .dw-carousel .carousel-item {
+        transition: none;
+    }
 }
