@@ -893,17 +893,11 @@ body:not(.bootstrap-page) .footer-divider {
     }
 }
 
-/* =========================================================
-   Training & Join Us pages (Bootstrap) - Sapan Miras
-   Spacing on these pages comes only from Bootstrap
-   utilities (m-*, p-*), so no margin/padding is set here.
-   ========================================================= */
 
 .text-soft {
     color: #d6d6d6;
 }
 
-/* Responsive typography: desktop -> tablet -> mobile */
 .page-title {
     font-size: 44px;
     font-weight: 800;
@@ -941,7 +935,6 @@ body:not(.bootstrap-page) .footer-divider {
     object-fit: cover;
 }
 
-/* Sidebar */
 .dw-sidebar {
     background-color: #1c1c1c;
     border-bottom: 1px solid #444444;
@@ -966,7 +959,6 @@ body:not(.bootstrap-page) .footer-divider {
     color: orange;
 }
 
-/* Bootstrap card theme */
 .dw-card {
     --bs-card-bg: #252525;
     --bs-card-border-color: #444444;
@@ -995,7 +987,6 @@ body:not(.bootstrap-page) .footer-divider {
     }
 }
 
-/* Panels and lists */
 .dw-panel {
     background-color: #252525;
     border: 1px solid #444444;
@@ -1007,7 +998,6 @@ body:not(.bootstrap-page) .footer-divider {
     border-color: #3a3a3a;
 }
 
-/* Schedule table */
 .dw-table {
     --bs-table-bg: #252525;
     --bs-table-striped-bg: #2c2c2c;
@@ -1021,7 +1011,6 @@ body:not(.bootstrap-page) .footer-divider {
     border-bottom: 2px solid orange;
 }
 
-/* Plans */
 .dw-plan .plan-price {
     font-size: 30px;
     font-weight: 800;
@@ -1043,7 +1032,6 @@ body:not(.bootstrap-page) .footer-divider {
     box-shadow: 0 8px 25px rgba(255, 165, 0, 0.15);
 }
 
-/* Carousel */
 .dw-carousel-img {
     height: 460px;
     object-fit: cover;
@@ -1056,7 +1044,6 @@ body:not(.bootstrap-page) .footer-divider {
     bottom: 2.5rem;
 }
 
-/* Keep captions and controls white on the dark theme */
 .dw-carousel.carousel .carousel-caption {
     color: #ffffff;
 }
@@ -1086,7 +1073,6 @@ body:not(.bootstrap-page) .footer-divider {
     }
 }
 
-/* Form on dark background */
 .bootstrap-page .form-control,
 .bootstrap-page .form-select,
 .bootstrap-page .input-group-text {
@@ -1108,5 +1094,172 @@ body:not(.bootstrap-page) .footer-divider {
 @media (prefers-reduced-motion: reduce) {
     .dw-carousel .carousel-item {
         transition: none;
+    }
+}
+
+
+.bootstrap-page {
+    transition: background-color 0.5s ease;
+}
+
+.datetime-block {
+    background-color: #252525;
+    border: 1px solid #444444;
+}
+
+.datetime-text {
+    display: block;
+    color: orange;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-variant-numeric: tabular-nums;
+}
+
+.faq-list {
+    max-width: 820px;
+}
+
+.faq-item {
+    background-color: #252525;
+    border: 1px solid #444444;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+.faq-heading {
+    margin: 0;
+    font-size: inherit;
+}
+
+.faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    width: 100%;
+    padding: 18px 20px;
+    background: transparent;
+    border: 0;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+}
+
+.faq-question:hover,
+.faq-question[aria-expanded="true"] {
+    color: orange;
+}
+
+.faq-icon {
+    position: relative;
+    flex: 0 0 20px;
+    height: 20px;
+}
+
+.faq-icon::before,
+.faq-icon::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 2px;
+    background-color: currentColor;
+    transition: transform 0.3s ease;
+}
+
+.faq-icon::before {
+    transform: translate(-50%, -50%);
+}
+
+.faq-icon::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.faq-question[aria-expanded="true"] .faq-icon::after {
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transition: max-height 0.35s ease, visibility 0s linear 0.35s;
+}
+
+.faq-answer.is-open {
+    visibility: visible;
+    transition: max-height 0.35s ease, visibility 0s linear 0s;
+}
+
+.faq-answer-text {
+    margin: 0;
+    padding: 0 20px 20px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bootstrap-page,
+    .faq-answer,
+    .faq-answer.is-open,
+    .faq-icon::before,
+    .faq-icon::after {
+        transition: none;
+    }
+}
+
+.dw-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 1080;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.75);
+    animation: popup-fade 0.25s ease;
+}
+
+.dw-popup[hidden] {
+    display: none;
+}
+
+.dw-popup-box {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    max-height: 100%;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    animation: popup-rise 0.3s ease;
+}
+
+.dw-popup-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+}
+
+body.popup-open {
+    overflow: hidden;
+}
+
+@keyframes popup-fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes popup-rise {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .dw-popup,
+    .dw-popup-box {
+        animation: none;
     }
 }

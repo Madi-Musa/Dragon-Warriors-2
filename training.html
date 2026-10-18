@@ -140,6 +140,12 @@
                                    href="#weekly-schedule">
                                     See the Schedule
                                 </a>
+                                <button type="button" class="btn btn-outline-warning btn-lg"
+                                        id="open-popup"
+                                        aria-haspopup="dialog"
+                                        aria-controls="subscribe-popup">
+                                    Subscribe
+                                </button>
                             </div>
                         </div>
 
@@ -182,7 +188,6 @@
                                     </p>
                                 </div>
                                 <div class="card-footer bg-transparent border-0 px-3 px-lg-4 pb-3 pb-lg-4 pt-0">
-                                    <!-- Task 6: btn-group -->
                                     <div class="btn-group w-100" role="group"
                                          aria-label="Beginner program actions">
                                         <a class="btn btn-warning" href="join.html">
@@ -563,6 +568,37 @@
         </div>
     </div>
 
+    <div class="dw-popup" id="subscribe-popup" role="dialog" aria-modal="true"
+         aria-labelledby="popup-title" hidden>
+        <div class="dw-popup-box dw-panel rounded-3 p-4">
+            <button type="button" class="btn-close dw-popup-close"
+                    id="close-popup" aria-label="Close"></button>
+
+            <h2 class="h4 text-warning mb-2" id="popup-title">Get Training Tips</h2>
+            <p class="mb-3">Subscribe to receive weekly workouts and schedule updates.</p>
+
+            <div class="alert alert-success d-none" id="popup-success" role="alert">
+                Thank you for subscribing!
+            </div>
+
+            <form id="subscribe-form" novalidate>
+                <div class="mb-3">
+                    <label for="sub-name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="sub-name"
+                           placeholder="Your name" autocomplete="name">
+                    <div class="invalid-feedback">Please enter your name.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="sub-email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="sub-email"
+                           placeholder="you@example.com" autocomplete="email">
+                    <div class="invalid-feedback">Please enter a valid email.</div>
+                </div>
+                <button type="submit" class="btn btn-warning w-100">Subscribe</button>
+            </form>
+        </div>
+    </div>
+
     <footer class="site-footer py-4 py-lg-5 px-3">
         <div class="container">
 
@@ -581,6 +617,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/popup.js"></script>
 
 </body>
 

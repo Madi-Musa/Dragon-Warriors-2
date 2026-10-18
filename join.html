@@ -329,6 +329,22 @@
                                 <div class="invalid-feedback">Please choose your level.</div>
                             </div>
 
+                            <div class="col-12 col-md-6">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password"
+                                       name="password" placeholder="At least 8 characters"
+                                       autocomplete="new-password" minlength="8" required>
+                                <div class="invalid-feedback">Please enter a password.</div>
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <label for="confirm-password" class="form-label">Confirm Password</label>
+                                <input type="password" class="form-control" id="confirm-password"
+                                       name="confirm-password" placeholder="Repeat your password"
+                                       autocomplete="new-password" required>
+                                <div class="invalid-feedback">Please confirm your password.</div>
+                            </div>
+
                             <fieldset class="col-12">
                                 <legend class="form-label fs-6 mb-2">Preferred Training Time</legend>
 
@@ -444,29 +460,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script>
-        const form = document.getElementById("signup-form");
-        const success = document.getElementById("form-success");
-
-        form.addEventListener("submit", function (event) {
-            event.preventDefault();
-
-            if (!form.checkValidity()) {
-                event.stopPropagation();
-                form.classList.add("was-validated");
-                return;
-            }
-
-            form.classList.remove("was-validated");
-            success.classList.remove("d-none");
-            form.reset();
-            success.scrollIntoView({ behavior: "smooth", block: "center" });
-        });
-
-        form.addEventListener("reset", function () {
-            form.classList.remove("was-validated");
-        });
-    </script>
+    <script src="js/validation.js"></script>
 
 </body>
 
