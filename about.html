@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-    <!-- Created by: Mussa Madi -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -134,81 +133,12 @@
         </section>
 
         <section class="container mb-4 mb-lg-5 px-3 px-md-4"
-                 aria-labelledby="team-heading">
+                aria-labelledby="team-heading">
             <h2 class="text-warning text-center mb-4" id="team-heading">
                 Our Team
             </h2>
 
-            <div class="row g-4">
-
-                <div class="col-12 col-lg-6">
-                    <article class="member-card h-100 p-3 p-lg-4" id="madi">
-                        <img class="member-photo d-block mx-auto mb-4"
-                             src="images/madi.png"
-                             alt="Mussa Madi"
-                             loading="lazy">
-
-                        <h3 class="mb-2">Mussa Madi</h3>
-                        <p class="member-role mb-3">Fitness Trainer</p>
-
-                        <p class="member-bio mb-3">
-                            My name is Mussa Madi. I live in Astana.
-                            I am a fitness trainer at Dragon Warriors Fitness
-                            with one year of experience.
-                        </p>
-
-                        <ul class="member-details list-unstyled p-0 mt-4 mb-0">
-                            <li class="py-3">
-                                <strong>Age</strong>
-                                <span>18 years old</span>
-                            </li>
-                            <li class="py-3">
-                                <strong>City</strong>
-                                <span>Astana</span>
-                            </li>
-                            <li class="py-3">
-                                <strong>Gym experience</strong>
-                                <span>1 year</span>
-                            </li>
-                        </ul>
-                    </article>
-                </div>
-
-                <div class="col-12 col-lg-6">
-                    <article class="member-card h-100 p-3 p-lg-4" id="miras">
-                        <img class="member-photo d-block mx-auto mb-4"
-                             src="images/miras.png"
-                             alt="Sapan Miras"
-                             loading="lazy">
-
-                        <h3 class="mb-2">Sapan Miras</h3>
-                        <p class="member-role mb-3">Fitness Trainer</p>
-
-                        <p class="member-bio mb-3">
-                            My name is Sapan Miras. I am 18 years old
-                            and live in Astana. I am a fitness trainer
-                            at Dragon Warriors Fitness and have two years
-                            of experience in fitness.
-                        </p>
-
-                        <ul class="member-details list-unstyled p-0 mt-4 mb-0">
-                            <li class="py-3">
-                                <strong>Age</strong>
-                                <span>18 years old</span>
-                            </li>
-                            <li class="py-3">
-                                <strong>City</strong>
-                                <span>Astana</span>
-                            </li>
-                            <li class="py-3">
-                                <strong>Fitness experience</strong>
-                                <span>2 years</span>
-                            </li>
-                        </ul>
-                    </article>
-                </div>
-
-            </div>
+            <div class="row g-4" id="team-list"></div>
         </section>
 
         <section class="container mb-4 mb-lg-5 px-3 px-md-4"
@@ -322,6 +252,17 @@
             <h2 class="text-warning text-center mb-4" id="gallery-heading">
                 Life at Dragon Warriors
             </h2>
+
+            <div class="text-center mb-4">
+                <img id="main-photo"
+                    src="images/gallery1.png"
+                    alt="Our gym interior"
+                    class="img-fluid rounded">
+
+                <p id="photo-caption" class="mt-2">
+                    Our gym interior
+                </p>
+            </div>
 
             <div class="row g-4">
 
@@ -439,6 +380,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/accordion.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/keyboard.js"></script>
+    <script src="js/team.js"></script>
 
 </body>
 

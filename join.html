@@ -2,7 +2,6 @@
 <html lang="en" data-bs-theme="dark">
 
 <head>
-    <!-- Created by: Sapan Miras -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -266,6 +265,9 @@
                 </div>
 
             </div>
+
+            <p class="text-center text-warning fw-semibold mt-4 mb-0"
+               id="plan-summary" aria-live="polite"></p>
         </section>
 
         <section class="container mb-4 mb-lg-5 px-3 px-md-4"
@@ -282,6 +284,11 @@
                         <div class="alert alert-success d-none" id="form-success"
                              role="alert">
                             Application sent. A trainer will contact you within one day.
+                        </div>
+
+                        <div class="alert alert-danger d-none" id="form-error"
+                             role="alert">
+                            Could not send the application. Check your connection and try again.
                         </div>
 
                         <form id="signup-form" class="row g-3 needs-validation"
@@ -459,9 +466,10 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
     <script src="js/validation.js"></script>
-
+    <script src="js/plans.js"></script>
+    <script src="js/keyboard.js"></script>
+    
 </body>
 
 </html>
